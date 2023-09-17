@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Welcome to Dream home</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src='main.js'></script>
+    <style>@import url('https://font.googleapis.com/css2?family=Poppins : wght@300;400;500;600;700;800;900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+          background: #081b29;
+            color: #ededed;
+        }
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background:transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .logo{
+            font-size: 25px;
+             color: #00abf0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .navbar a{
+            font-size: 18px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+        }
+        .navbar a:hover,.navbar a.active{
+            color: #00abf0;
+        
+        }
+        .home{
+            height: 100vh;
+           
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+        }
+        .home-content{
+           max-width: 600px;
+        }
+        .home-content h1{
+            position: relative;
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .home-content h1::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: 1s;
+        }
+        .home-content h3{
+            position: relative;
+            font-size: 32px;
+            font-weight: 700;
+            color: #00abf0;
+        }
+        .home-content h3::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: 1.6s;
+        }
+        .home-content p{
+            position: relative;
+            font-size: 16px;
+            margin: 20px 0 40px;
+        }
+        .home-content p::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: 1.9s;
+        }
+        .home-content .btn-box{
+            position: relative;
+            width: 345px;
+            height: 50px;
+        }
+        .home-content .btn-box::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: 1.9s;
+            z-index: 2;
+        }
+        .btn-box a{
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            text-align: center;
+            width: 150px;
+            height: 100%;
+            background: #00abf0;
+            border: 2px solid #00abf0;
+            border-radius: 8px;
+            font-size: 19px;
+            color: #081b29;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 1;
+            overflow: hidden;
+            transition: .5s;
+        }
+        .btn-box a:hover{
+            color: #00abf0;
+        }
+        .btn-box a:nth-child(2){
+            background: transparent;
+            color: #00abf0;
+        }
+        .btn-box a:nth-child(2):hover{
+            color: #081b29;
+        }
+        .btn-box a:nth-child(2)::before{
+            background:#00abf0;
+        }
+        .btn-box a::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width:0;
+            height: 100%;
+            background:#081b29;
+            z-index: -1;
+            transition: .5s;
+        }
+        .btn-box a:hover::before{
+            width: 100%;
+        }
+        .home-sci{
+            position: absolute;
+            bottom: 40px;
+            width: 170px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .home-sci::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: 1.9s;
+            z-index: 2;
+        }
+        .home-sci a{
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 2px solid #00abf0;
+            border-radius: 50%;
+            font-size: 20px;
+            color: #00abf0;
+            text-decoration: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .home-sci a:hover{
+        color: #081b29;
+        }
+        .home-sci a::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background:#00abf0;
+            z-index: -1;
+            transition: .5s;
+        }
+        .home-sci a:hover::before{
+            width: 100%;
+            height: 100%;
+        
+        }
+        
+        @keyframes showRight{
+            100%{
+                width: 0;
+        
+            }
+        }</style>
+</head>
+<body>
+    <header class="header">
+        <a href="" class="logo">Dream Home.</a>
+        <nav class="navbar">
+            <a href="home.html" class="active">Home</a>
+            <a href="Property.jsp">Add Property</a>
+            <a href="PropertyDetails.jsp">View Property</a>
+            <a href="Login.jsp">Logout</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-content">
+            <h1>Dream Home</h1>
+            <h3>Home for you only</h3>
+            <p>Odisha is the most populous state in India. Being the capital city of Odisha, Bhubaneswar is a suburb of Khordha, situated on the banks of Daya River. The city is known for its developing real estate market that is growing everyday due to huge number of migrants. Odisha is the Eastern Indian state, which is known for its modern and rich infrastructure and contemporary architecture. Along with all the aforementioned attraction Odisha is a stunning city that is hub of different commercial and residential activities. This city is gradually becoming a major IT & ITES, services industry hub where a lot of people are searching for residential properties for sale or rent in Bhubaneswar and other cities. Some of the renowned residential localities in Odisha are Bhubaneswar, Rourkela, Sundargadh, Berhampur, Sambalpur and more. A huge number of people are shifting in this city for their livelihood and therefore the demand for houses for sale in Odisha is rising every day. And to meet this demand many renowned builders are coming up with new project in Odisha. Also Odisha is well-equipped with transportation facilities where you will be stay connected with all the major places in the city via Mo Buses Services and more.</p>
+                <div class="btn-box">
+                    <a href="PropertyDetails.jsp">Buy</a>
+                    <a href="Property.jsp">Sell</a>
+                </div>
+        </div>
+        <div class="home-sci">
+            <a href="#"><i class='bx bxl-facebook' ></i></a>
+            <a href="https://www.linkedin.com/in/sagar-padhi-ab818920b"><i class='bx bxl-linkedin' ></i></a>
+            <a href="https://instagram.com/sagar_padhi_sp?igshid=MjEwN2IyYWYwYw=="><i class='bx bxl-instagram-alt' ></i></a>
+        </div>
+    </section>
+</body>
+</html>
